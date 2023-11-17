@@ -1,0 +1,37 @@
+.home{
+    /* background-color: red; */
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    max-width: 90%;
+    margin-top: 2em;
+    gap: 7em;
+}
+
+.desc{
+    margin: 0 auto;
+    background-color: #171717dc;
+    color: white;
+    padding: 1.5em;
+    border-radius: 0.5em;
+}
+
+.desc p{
+    max-width: 40ch;
+    font-size: 1.4em;
+    font-weight: 400;
+}
+
+.desc p span{
+    font-size: 1.2em;
+    font-family: 'Gill Sans', sans-serif;
+    font-weight: 400;
+    text-align: center;
+}
+
+.list{
+    text-align: center;
+    background-color: #212529;
+    color: white;
+    
+}
