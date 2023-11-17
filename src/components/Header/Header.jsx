@@ -5,18 +5,20 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 import { Link } from 'react-router-dom';
 
-import './Header.css'
+import styles from './Header.module.css';
 
 export default function Header() {
   return (
-    <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+    <Navbar collapseOnSelect bg='dark' data-bs-theme="dark">
       <Container>
-        <Navbar.Brand as={Link} to="/">Must Watch</Navbar.Brand>
+        <Navbar.Brand className={styles.brand} as={Link} to="/">
+          Must Watch
+          </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link as={Link} to="/">Home</Nav.Link>
-            <NavDropdown title="Catalog" id="collapsible-nav-dropdown">
+            <NavDropdown title="My List" id="collapsible-nav-dropdown">
               <NavDropdown.Item as={Link} to="/catalog/movies">Movies</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/catalog/tv-series">TV Series</NavDropdown.Item>
             </NavDropdown>
@@ -25,7 +27,7 @@ export default function Header() {
           <Nav>
             <Nav.Link as={Link} to="/login">Login</Nav.Link>
             <Nav.Link as={Link} to="/register">Register</Nav.Link>
-            <Nav.Link disabled>user@abv.com</Nav.Link>
+            <Nav.Link disabled>Welcome: user@abv.com</Nav.Link>
             <Nav.Link as={Link} to="/logout">Logout</Nav.Link>
           </Nav>
         </Navbar.Collapse>
