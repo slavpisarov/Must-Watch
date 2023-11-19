@@ -1,0 +1,31 @@
+.createForm{
+    background-color: #212529dc;
+    display: block;
+    margin-top: 4em;
+    padding: 2em;
+    width: 50%;
+    margin: 2em auto;
+    align-items: center;
+    border-radius: 2em;
+}
+
+.label{
+    padding-top: 0.5em;
+    color: white;
+}
+.label1{
+    color: white;
+}
+
+.btn{
+    display: block;
+    margin: 0 auto;
+}
+
+.header{
+    color: white;
+    font-size: 2em;
+    display: block;
+    text-align: center;
+
+}
