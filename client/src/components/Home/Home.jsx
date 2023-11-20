@@ -1,7 +1,17 @@
+import { useEffect, useState } from 'react'
 import styles from './Home.module.css'
 
-export default function Home() {
+import * as gameService from '../../services/mediaService'
 
+export default function Home() {
+    const [media,setMedia] = useState([])
+
+    useEffect(() =>{
+      gameService.getAll()
+      .then(setMedia)
+    },[])
+
+    console.log(media);
     return (
         <div className={styles.home}>
             <div className={styles.desc}>
