@@ -2,6 +2,9 @@ import { useEffect, useState } from 'react'
 import styles from './Home.module.css'
 
 import * as gameService from '../../services/mediaService'
+import CardHome from '../Card/CardHome'
+
+import CardGroup from 'react-bootstrap/CardGroup';
 
 export default function Home() {
     const [media,setMedia] = useState([])
@@ -24,7 +27,9 @@ export default function Home() {
                 </p>
             </div>
             <div className={styles.list}>
-                UL goes here
+            {/* <CardGroup> */}
+                {media.map(m =><CardHome key={m._id} {...m}/>)}
+            {/* </CardGroup> */}
             </div>
         </div>
     )
