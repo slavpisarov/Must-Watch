@@ -2,17 +2,15 @@ import { useEffect, useState } from 'react'
 import styles from './Home.module.css'
 
 import * as gameService from '../../services/mediaService'
-import CardHome from '../Card/CardHome'
-
-import CardGroup from 'react-bootstrap/CardGroup';
+import CardHome from '../Card/CardMain'
 
 export default function Home() {
-    const [media,setMedia] = useState([])
+    const [media, setMedia] = useState([])
 
-    useEffect(() =>{
-      gameService.getAll()
-      .then(setMedia)
-    },[])
+    useEffect(() => {
+        gameService.getAll()
+            .then(setMedia)
+    }, [])
 
     console.log(media);
     return (
@@ -27,9 +25,10 @@ export default function Home() {
                 </p>
             </div>
             <div className={styles.list}>
-            {/* <CardGroup> */}
-                {media.map(m =><CardHome key={m._id} {...m}/>)}
-            {/* </CardGroup> */}
+                {media.map(m => <CardHome
+                    key={m._id}
+                    {...m} />
+                )}
             </div>
         </div>
     )

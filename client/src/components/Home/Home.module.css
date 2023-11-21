@@ -1,25 +1,32 @@
 .home{
-    /* background-color: red; */
     display: flex;
     margin: 0 auto;
     flex-direction: column;
-    max-width: 90%;
-    margin-top: 1em;
+    max-width: 95%;
+    justify-content:space-between;
     gap: 1em;
+    padding: 1em 0;
+    margin: 1 0;
+    height: 88vh;
 }
 
 .desc{
+    display: flex;
+    flex-direction: column;
     margin: 0 auto;
+    justify-content: space-evenly;
     background-color: #171717dc;
     color: white;
-    padding: 1.5em;
+    height: 20vh;
+    padding: 0 1.5em;
     border-radius: 0.5em;
 }
 
 .desc p{
     max-width: 40ch;
-    font-size: 1.4em;
+    font-size: 1.2em;
     font-weight: 400;
+    margin-bottom: 0;
 }
 
 .desc p span{
@@ -27,11 +34,12 @@
     font-family: 'Gill Sans', sans-serif;
     font-weight: 400;
     text-align: center;
+
 }
 
 .list{
     text-align: center;
     display: flex;
-    gap: 0.5em;
-    /* margin-bottom: 4em; */
+    justify-content: space-around;
+    gap: 1em;
 }

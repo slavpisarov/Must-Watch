@@ -1,28 +1,25 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-import styles from './CardHome.module.css'
+import styles from './CardMain.module.css'
 
-export default function CardHome({
+export default function CardMain({
     title,
-    year,
     type,
     genre,
-    // notes,
     imageUrl
 }) {
 
     console.log('good');
     return (
         <Card className={styles.card}>
-            <Card.Header>{type}</Card.Header>
+            <Card.Header className={styles.text}>{type === 'movie'?'Movie':'TV Series'}</Card.Header>
             <div className='img-container'>
                 <Card.Img variant='top' className={styles.image} src={imageUrl} />
             </div>
             <Card.Body>
-                <Card.Title>{title}</Card.Title>
-                <Card.Text>{year}</Card.Text>
-                <Card.Text>{genre} </Card.Text>
+                <Card.Title className={styles.text}>{title}</Card.Title>
+                <Card.Text className={styles.text}>{genre} </Card.Text>
                 <Button variant="primary">Details</Button>
             </Card.Body>
         </Card>

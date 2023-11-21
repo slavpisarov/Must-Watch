@@ -1,0 +1,16 @@
+.card {
+
+    background-color: #171717dc;
+    flex: 1 1 10em;
+}
+
+.image {
+    margin: 0 auto;
+    object-fit: cover;
+    width: 80%; 
+    height: 25vh; 
+}
+
+.text{
+    color: white;
+}
