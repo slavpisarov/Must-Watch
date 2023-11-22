@@ -24,10 +24,7 @@ export default function Create() {
         // await fetch
     }
 
-
     const {formValues,changeHandler, onSubmit} = useForm(formInitialState,addMedia);
-
-
 
     return (
         <div className={styles.createForm}>

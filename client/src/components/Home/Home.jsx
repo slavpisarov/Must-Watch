@@ -12,7 +12,6 @@ export default function Home() {
             .then(setMedia)
     }, [])
 
-    console.log(media);
     return (
         <div className={styles.home}>
             <div className={styles.desc}>
@@ -24,11 +23,15 @@ export default function Home() {
                     Never forget your <span>Must Watch!</span>
                 </p>
             </div>
-            <div className={styles.list}>
-                {media.map(m => <CardHome
-                    key={m._id}
-                    {...m} />
-                )}
+            <div className={styles.homeMedia}>
+
+                <h5 className={styles.comment}>Most commented:</h5>
+                <div className={styles.list}>
+                    {media.map(m => <CardHome
+                        key={m._id}
+                        {...m} />
+                    )}
+                </div>
             </div>
         </div>
     )

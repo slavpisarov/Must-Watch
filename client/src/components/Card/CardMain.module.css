@@ -1,16 +1,25 @@
 .card {
 
     background-color: #171717dc;
-    flex: 1 1 10em;
+    flex: 1 1 8em;
+    /* height: ; */
 }
 
 .image {
     margin: 0 auto;
     object-fit: cover;
-    width: 80%; 
-    height: 25vh; 
+    width: 70%; 
+    height: 26vh; 
+    border-radius: 2%;
 }
 
 .text{
     color: white;
+}
+
+.title{
+    color:white;
+    min-height: 2.4em;
+    max-width: 20ch;
+    margin: 0 auto;
 }

@@ -10,7 +10,6 @@ export default function CardMain({
     imageUrl
 }) {
 
-    console.log('good');
     return (
         <Card className={styles.card}>
             <Card.Header className={styles.text}>{type === 'movie'?'Movie':'TV Series'}</Card.Header>
@@ -18,7 +17,7 @@ export default function CardMain({
                 <Card.Img variant='top' className={styles.image} src={imageUrl} />
             </div>
             <Card.Body>
-                <Card.Title className={styles.text}>{title}</Card.Title>
+                <Card.Title className={styles.title}>{title}</Card.Title>
                 <Card.Text className={styles.text}>{genre} </Card.Text>
                 <Button variant="primary">Details</Button>
             </Card.Body>
