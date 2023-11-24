@@ -1,7 +1,8 @@
 #root{
+    /* background-image: linear-gradient(rgba(21, 21, 21, 0.5), rgba(21, 21, 21, 0.7)),url(./assets/backgroundImg.jpeg); */
     background-image: linear-gradient(rgba(21, 21, 21, 0.5), rgba(21, 21, 21, 0.7)),url(./assets/background.jpeg);
-    height: 105vh;
-    background-repeat: repeat;
+    height: 130vh;
+    background-repeat: no-repeat;
     background-size:cover;
     background-position:center;
 

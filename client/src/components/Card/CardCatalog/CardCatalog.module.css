@@ -1,0 +1,28 @@
+.card {
+
+    background-color: #171717dc;
+    flex: 1 1 8em;
+    /* height: ; */
+}
+
+.image {
+    margin: 0 auto;
+    object-fit: cover;
+    width: 70%; 
+    height: 16vh; 
+    border-radius: 2%;
+}
+
+.text{
+    color: white;
+    margin: -0.5em 0 0 0;
+}
+
+.title{
+    color:white;
+    font-size: 0.9em;
+    min-height: 2.4em;
+    max-width: 20ch;
+    margin: 0 auto;
+    margin-bottom: -0.5em;
+}

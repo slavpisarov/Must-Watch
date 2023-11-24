@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react'
 import styles from './Home.module.css'
 
-import * as gameService from '../../services/mediaService'
-import CardHome from '../Card/CardMain'
+import * as mediaService from '../../services/mediaService'
+import CardMain from '../Card/CardHome/CardMain'
 
 export default function Home() {
     const [media, setMedia] = useState([])
 
     useEffect(() => {
-        gameService.getHomePage()
+        mediaService.getHomePage()
             .then(setMedia)
     }, [])
 
@@ -27,9 +27,11 @@ export default function Home() {
 
                 <h5 className={styles.comment}>Most commented:</h5>
                 <div className={styles.list}>
-                    {media.map(m => <CardHome
+                    {media.map(m => <CardMain
                         key={m._id}
-                        {...m} />
+                        {...m}
+                        image={m.imageUrl} //remove when migrating to collections
+                        />
                     )}
                 </div>
             </div>

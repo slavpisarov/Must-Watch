@@ -22,10 +22,8 @@ export default function Create() {
     const navigate = useNavigate()
     
     const addMedia = async (mediaData) =>{
-        console.log(mediaData)
         await mediaService.create(mediaData)
         navigate('/')
-        // await fetch
     }
 
     const {formValues,changeHandler, onSubmit} = useForm(formInitialState,addMedia);
