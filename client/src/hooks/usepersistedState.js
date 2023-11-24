@@ -15,6 +15,7 @@ export default function usePersistedState(key, defaulValue) {
     const setPersistedState = (value) =>{
 
         setState(value);
+        
 
         let serializedValue;
 
@@ -23,6 +24,7 @@ export default function usePersistedState(key, defaulValue) {
         } else{
             serializedValue = JSON.stringify(value);
         }
+        console.log(serializedValue);
 
         localStorage.setItem(key, serializedValue)
     }

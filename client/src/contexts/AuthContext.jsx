@@ -1,6 +1,6 @@
 import { createContext } from "react";
 import { useNavigate } from 'react-router-dom'
-import usePersistedState from "../hooks/usepersistedState";
+import usePersistedState from "../hooks/usePersistedState";
 
 import * as authService from '../services/authService'
 
@@ -13,19 +13,17 @@ export const AuthProvider = ({children}) =>{
     const navigate = useNavigate() 
     const [auth, setAuth] = usePersistedState('auth',{})
   
-    const loginSubmitHandler = async (values) => {
-    //   const result = await authService.login(values.email, values.password)
-  
-    //   setAuth(result);
-    //   localStorage.setItem('accessToken',result.accessToken)
-    //   navigate('/');
+    const loginSubmitHandler = async ({email,password}) => {
+      const result = await authService.login(email,password)
+      setAuth(result);
+      localStorage.setItem('accessToken',result.accessToken)
+      navigate('/');
     }
   
     
     const registerSubmitHandler = async ({username,email,password}) => {
 
       const result = await authService.register(username,email,password)
-      setAuth(result);
       localStorage.setItem('accessToken',result.accessToken)
       
       navigate('/')
