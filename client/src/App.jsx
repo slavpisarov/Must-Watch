@@ -6,36 +6,14 @@ import './styles.css'
 import Create from "./components/Create/Create";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
-import AuthContext from "./contexts/authContext";
+import { AuthProvider }from './contexts/AuthContext'
+
 
 
 function App() {
 
-  const navigate = useNavigate()
-
-  const loginSubmitHandler = async (values) => {
-    console.log(values);
-    navigate('/')
-
-    // await fetch
-  }
-
-  const registerSubmitHandler = async (values) => {
-    console.log(values);
-    navigate('/')
-
-    // await fetch
-  }
-  const values = {
-    loginSubmitHandler,
-    registerSubmitHandler,
-    // logoutHandler,
-    // email: auth.email,
-    // isAuthenticated: !!auth.accessToken,
-  }
-
   return (
-    <AuthContext.Provider value={values}>
+    <AuthProvider>
       <Header />
 
       <Routes>
@@ -45,7 +23,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
       </Routes>
-    </AuthContext.Provider>
+    </AuthProvider>
   )
 }
 

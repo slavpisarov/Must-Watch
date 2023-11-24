@@ -26,12 +26,3 @@
     text-align: center;
 
 }
-
-.form-control{
-    background-image: none;
-}
-
-.form-control.is-invalid, .was-validated .form-control:invalid{
-    background-image: none;
-
-}

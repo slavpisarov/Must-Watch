@@ -34,7 +34,7 @@ export default function Login() {
                         value={formValues.username}
                         onChange={changeHandler}
                     />
-                    <Form.Control.Feedback type='invalid'>Choose an username</Form.Control.Feedback>
+                    <Form.Control.Feedback type='invalid'>Choose a username</Form.Control.Feedback>
                 </Form.Group>
 
                 <Form.Group  >
