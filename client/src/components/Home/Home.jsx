@@ -8,7 +8,7 @@ export default function Home() {
     const [media, setMedia] = useState([])
 
     useEffect(() => {
-        gameService.getAll()
+        gameService.getHomePage()
             .then(setMedia)
     }, [])
 

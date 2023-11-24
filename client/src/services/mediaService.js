@@ -1,9 +1,10 @@
 import * as request  from "../lib/request";
 
-const baseUrl = 'http://localhost:3030/jsonstore/media'
+const tempUrl = 'http://localhost:3030/jsonstore/media'
+const baseUrl = 'http://localhost:3030/data/media'
 
-export const getAll = async () =>{
-    const result= await request.get(baseUrl);
+export const getHomePage = async () =>{
+    const result= await request.get(tempUrl);
 
     return Object.values(result)
 }

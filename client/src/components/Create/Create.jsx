@@ -4,9 +4,9 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 
 import styles from './Create.module.css'
-import { useState } from 'react';
-
 import useForm from '../../hooks/useForm';
+import * as mediaService from '../../services/mediaService'
+import { useNavigate } from 'react-router-dom';
 
 const formInitialState = {
     title: '',
@@ -18,9 +18,13 @@ const formInitialState = {
 }
 
 export default function Create() {
+
+    const navigate = useNavigate()
     
-    const addMedia = async (values) =>{
-        console.log(values);
+    const addMedia = async (mediaData) =>{
+        console.log(mediaData)
+        await mediaService.create(mediaData)
+        navigate('/')
         // await fetch
     }
 
