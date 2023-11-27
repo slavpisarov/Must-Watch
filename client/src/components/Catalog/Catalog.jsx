@@ -11,7 +11,6 @@ export default function Home() {
         mediaService.getAll()
             .then(setMedia)
     }, [])
-console.log(media);
     return (
         <div className={styles.home}>
             <div className={styles.head}>
@@ -19,7 +18,6 @@ console.log(media);
             </div>
                 <div className={styles.list}>
                     {media.map(m => <CardCatalog
-                    className={styles.card}
                         key={m._id}
                         {...m} />
                     )}

@@ -2,12 +2,14 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 import styles from './CardCatalog.module.css'
+import { Link } from 'react-router-dom';
 
 export default function CardMain({
     title,
     type,
     genre,
-    image
+    image,
+    _id
 }) {
 
     return (
@@ -19,7 +21,7 @@ export default function CardMain({
             <Card.Body>
                 <Card.Title className={styles.title}>{title}</Card.Title>
                 <Card.Text className={styles.text}>{genre} </Card.Text>
-                <Button variant="primary">Details</Button>
+                <Button variant="primary" as={Link} to={`/media/${_id}`}>Details</Button>
             </Card.Body>
         </Card>
     );

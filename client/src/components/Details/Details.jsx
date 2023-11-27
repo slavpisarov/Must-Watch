@@ -1,6 +1,8 @@
 import { useContext, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom'
 
+import * as mediaService from '../../services/mediaService'
+
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
@@ -12,31 +14,38 @@ export default function Details({
     genre,
     image
 }) {
-// const { email,userId } = useContext(AuthContext)
-const [game, setGame] = useState([])
-const { mediaId } = useParams();
+    // const { email,userId } = useContext(AuthContext)
+    const [media, setMedia] = useState([])
+    const { mediaId } = useParams();
 
 
-useEffect(() => {
-
-console.log(mediaId);
-
-    // gameService.getOne(mediaId)
-    //     .then(setGame)
-}, [mediaId])
+    useEffect(() => {
+        mediaService.getOne(mediaId)
+            .then(setMedia)
+    }, [mediaId])
 
 
     return (
-        <Card className={styles.card}>
-            <Card.Header className={styles.text}>{type === 'movie'?'Movie':'TV Series'}</Card.Header>
-            <div className='img-container'>
-                <Card.Img variant='top' className={styles.image} src={image} />
+
+        <div className={styles.home}>
+            <div className={styles.head}>
+                <h1>Details page</h1>
             </div>
-            <Card.Body>
-                <Card.Title className={styles.title}>{title}</Card.Title>
-                <Card.Text className={styles.text}>{genre} </Card.Text>
-                <Button variant="primary">Details</Button>
-            </Card.Body>
-        </Card>
+            <Card className={styles.card}>
+                {/* <Card.Header className={styles.text}>{media.type === 'movie' ? 'Movie' : 'TV Series'}</Card.Header> */}
+                <div className='img-container'>
+                    <Card.Img variant='top' className={styles.image} src={media.image} />
+                </div>
+                <Card.Body>
+                    <Card.Title className={styles.title}>{media.title} {` ( ${media.year} )`}</Card.Title>
+                    <Card.Text className={styles.text}>Type: {media.type === 'movie' ? 'Movie' : 'TV Series'}</Card.Text>
+                    <Card.Text className={styles.text}>Genre: {media.genre} </Card.Text>
+                    <Card.Text className={styles.text}>Notes: {media.notes} </Card.Text>
+                    <Button className={styles.btns} variant="primary">Edit</Button>
+                    <Button className={styles.btns} variant="danger">Delete</Button>
+                </Card.Body>
+            </Card>
+        </div>
+
     );
 }
