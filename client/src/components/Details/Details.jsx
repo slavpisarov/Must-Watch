@@ -1,16 +1,30 @@
+import { useContext, useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom'
+
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-import styles from './CardMain.module.css'
-import { Link } from 'react-router-dom';
+import styles from './Details.module.css'
 
-export default function CardMain({
+export default function Details({
     title,
     type,
     genre,
-    image,
-    _id
+    image
 }) {
+// const { email,userId } = useContext(AuthContext)
+const [game, setGame] = useState([])
+const { mediaId } = useParams();
+
+
+useEffect(() => {
+
+console.log(mediaId);
+
+    // gameService.getOne(mediaId)
+    //     .then(setGame)
+}, [mediaId])
+
 
     return (
         <Card className={styles.card}>
@@ -21,7 +35,7 @@ export default function CardMain({
             <Card.Body>
                 <Card.Title className={styles.title}>{title}</Card.Title>
                 <Card.Text className={styles.text}>{genre} </Card.Text>
-                <Button variant="primary" as={Link} to={`/media/${_id}`}>Details</Button>
+                <Button variant="primary">Details</Button>
             </Card.Body>
         </Card>
     );
