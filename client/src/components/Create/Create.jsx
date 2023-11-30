@@ -23,7 +23,7 @@ export default function Create() {
     
     const addMedia = async (mediaData) =>{
         await mediaService.create(mediaData)
-        navigate('/')
+        navigate(mediaData.type === 'movie' ? '/catalog/movies' : '/catalog/tv-series')
     }
 
     const {formValues,changeHandler, onSubmit} = useForm(formInitialState,addMedia);
