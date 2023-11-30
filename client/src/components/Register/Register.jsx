@@ -1,5 +1,5 @@
 
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
@@ -15,11 +15,10 @@ const formInitialState = {
     rePassword: '',
 }
 
-export default function Login() {
+export default function Register() {
+    const {registerSubmitHandler, registerErr} = useContext(AuthContext)
 
-    const {registerSubmitHandler} = useContext(AuthContext)
-
-    const { formValues, changeHandler, onSubmit, validated, errors } = useForm(formInitialState, registerSubmitHandler);
+    const { formValues, changeHandler, onSubmit, validated, errors } = useForm(formInitialState, registerSubmitHandler,registerErr);
 
     return (
         <div className={styles.form}>
@@ -45,8 +44,9 @@ export default function Login() {
                         name='email'
                         value={formValues.email}
                         onChange={changeHandler}
+                        isInvalid={errors.operationError}
                     />
-                    <Form.Control.Feedback type='invalid'>Valid email is required</Form.Control.Feedback>
+                    <Form.Control.Feedback type='invalid'>{errors.operationError ? 'User with this email already exists': 'Valid email is required' }</Form.Control.Feedback>
                 </Form.Group>
 
                 <Form.Group >
@@ -71,7 +71,7 @@ export default function Login() {
                         onChange={changeHandler}
                         isInvalid={errors.passwordMismatch}
                     />
-                    <Form.Control.Feedback type='invalid'>Passwords don't match</Form.Control.Feedback>
+                    <Form.Control.Feedback type='invalid'>{formValues.rePassword ==='' ? 'Repeat password is required': 'Passwords do not match'}</Form.Control.Feedback>
                 </Form.Group>
 
 

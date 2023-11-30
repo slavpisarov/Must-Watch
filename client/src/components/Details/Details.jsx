@@ -23,7 +23,7 @@ export default function Details() {
 
     const deleteMedia = async () =>{
 
-        const hasConfirmed = confirm(`Are you sure yu want to delete ${media.title} from ${media.year}`);
+        const hasConfirmed = confirm(`Are you sure you want to delete ${media.title} from ${media.year}`);
         if(hasConfirmed){
             await mediaService.remove(mediaId)
 
