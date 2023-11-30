@@ -15,8 +15,8 @@ export const getAll = async () =>{
     return Object.values(result)
 }
 
-export const getOne = async (id) =>{
-    const result= await request.get(`${baseUrl}/${id}`);
+export const getOne = async (mediaId) =>{
+    const result= await request.get(`${baseUrl}/${mediaId}`);
 
     return result
 }
@@ -27,3 +27,5 @@ export const create = async (data) => {
 
     return result;
 }
+
+export const remove = async (mediaId) => request.remove(`${baseUrl}/${mediaId}`);
