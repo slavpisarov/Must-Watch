@@ -18,7 +18,7 @@ const formInitialState = {
 export default function Register() {
     const {registerSubmitHandler, registerErr} = useContext(AuthContext)
 
-    const { formValues, changeHandler, onSubmit, validated, errors } = useForm(formInitialState, registerSubmitHandler,registerErr);
+    const { formValues, changeHandler, onSubmit, validated, errors } = useForm(formInitialState, registerSubmitHandler);
 
     return (
         <div className={styles.form}>
@@ -44,9 +44,9 @@ export default function Register() {
                         name='email'
                         value={formValues.email}
                         onChange={changeHandler}
-                        isInvalid={errors.operationError}
+                        isInvalid={registerErr}
                     />
-                    <Form.Control.Feedback type='invalid'>{errors.operationError ? 'User with this email already exists': 'Valid email is required' }</Form.Control.Feedback>
+                    <Form.Control.Feedback type='invalid'>{registerErr ? 'User with this email already exists': 'Valid email is required' }</Form.Control.Feedback>
                 </Form.Group>
 
                 <Form.Group >

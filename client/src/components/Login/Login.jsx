@@ -6,7 +6,7 @@ import Form from 'react-bootstrap/Form';
 import styles from './Login.module.css'
 
 import useForm from '../../hooks/useForm';
-import AuthContext from '../../contexts/authContext';
+import AuthContext from '../../contexts/AuthContext';
 
 const formInitialState = {
     email: '',
@@ -15,9 +15,9 @@ const formInitialState = {
 
 export default function Login() {
 
-    const {loginSubmitHandler} = useContext(AuthContext)
+    const {loginSubmitHandler,loginErr} = useContext(AuthContext)
 
-    const { formValues, changeHandler, onSubmit, validated } = useForm(formInitialState, loginSubmitHandler);
+    const { formValues, changeHandler, onSubmit, validated, errors} = useForm(formInitialState, loginSubmitHandler);
 
     return (
         <div className={styles.form}>
@@ -43,8 +43,11 @@ export default function Login() {
                         name='password' 
                         value={formValues.password}
                         onChange={changeHandler}
+                        isInvalid={loginErr}
                     />
-                    <Form.Control.Feedback type='invalid'>Password is required</Form.Control.Feedback>
+                    {formValues.password === '' &&(<Form.Control.Feedback type='invalid'>Password is required</Form.Control.Feedback>)}
+                    {loginErr && (<Form.Control.Feedback type='invalid'>Email or password don't match</Form.Control.Feedback>)}
+
                 </Form.Group>
 
 

@@ -13,12 +13,19 @@ export const AuthProvider = ({children}) =>{
     const navigate = useNavigate() 
     const [auth, setAuth] = usePersistedState('auth',{})
     const [registerErr,setRegisterErr] = useState(false)
+    const [loginErr,setLoginErr] = useState(false)
   
     const loginSubmitHandler = async ({email,password}) => {
-      const result = await authService.login(email,password)
-      setAuth(result);
-      localStorage.setItem('accessToken',result.accessToken)
-      navigate('/');
+      setLoginErr(false)
+      try {
+        const result = await authService.login(email,password)
+        setAuth(result);
+        localStorage.setItem('accessToken',result.accessToken)
+        navigate('/');
+      } catch (error) {
+        setLoginErr(true)
+      }
+
     }
   
     const registerSubmitHandler = async ({username,email,password}) => {
@@ -32,7 +39,6 @@ export const AuthProvider = ({children}) =>{
         
       } catch (error) {
         setRegisterErr(true)
-        navigate('/register')
       }
     }
     const logoutHandler = () =>{
@@ -41,13 +47,14 @@ export const AuthProvider = ({children}) =>{
     }
     
     const values = {
-      logoutHandler,
-      registerSubmitHandler,
       loginSubmitHandler,
+      loginErr:loginErr,
+      registerSubmitHandler,
+      registerErr: registerErr,
+      logoutHandler,
       email: auth.email,
       username:auth.username,
       isAuthenticated: !!auth.accessToken,
-      registerErr: registerErr
     }
   
 
