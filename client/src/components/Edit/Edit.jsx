@@ -6,7 +6,8 @@ import Row from 'react-bootstrap/Row';
 import styles from './Edit.module.css'
 import useForm from '../../hooks/useForm';
 import * as mediaService from '../../services/mediaService'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 const formInitialState = {
     title: '',
@@ -20,17 +21,38 @@ const formInitialState = {
 export default function Create() {
 
     const navigate = useNavigate()
+    const [media,setMedia] = useState(formInitialState)
+    const { mediaId } = useParams()
 
-    const addMedia = async (mediaData) => {
-        await mediaService.create(mediaData)
-        navigate(mediaData.type === 'movie' ? '/catalog/movies' : '/catalog/tv-series')
+    useEffect(()=>{
+        mediaService.getOne(mediaId)
+        .then(setMedia)
+    },[])
+
+    const changeHandler = (e) =>{
+        setMedia(state =>({
+            ...state,
+            [e.target.name]:e.target.value,
+        }))
     }
 
-    const { formValues, changeHandler, onSubmit, validated } = useForm(formInitialState, addMedia);
+    const editGameSubmit = async (e) =>{
+        e.preventDefault()
+
+        const data = Object.fromEntries(new FormData(e.currentTarget));
+
+        try {
+            await mediaService.edit(mediaId, data);
+            navigate('/')
+
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
     return (
         <div className={styles.createForm}>
-            <Form noValidate validated={validated} onSubmit={onSubmit}>
+            <Form noValidate onSubmit={editGameSubmit}>
 
                 <Form.Label className={styles.header}>Add new Must Watch</Form.Label>
                 <Row className="mb-3">
@@ -41,7 +63,7 @@ export default function Create() {
                             type="text"
                             placeholder="eg.Aqua man"
                             name='title'
-                            value={formValues.title}
+                            value={media.title}
                             onChange={changeHandler} />
                     <Form.Control.Feedback type='invalid'>Title is required</Form.Control.Feedback>
                     </Form.Group>
@@ -51,13 +73,13 @@ export default function Create() {
                         <Form.Control
                             placeholder="eg.2018"
                             name='year'
-                            value={formValues.year}
+                            value={media.year}
                             onChange={changeHandler} />
                     </Form.Group>
 
                     <Form.Group as={Col} controlId="formGridType">
                         <Form.Label className={styles.label}>Type</Form.Label>
-                        <Form.Select required name='type' value={formValues.type} onChange={changeHandler}>
+                        <Form.Select required name='type' value={media.type} onChange={changeHandler}>
                             <option value=''>Choose..</option>
                             <option value='movie'>Movie</option>
                             <option value='tv-series'>TV Series</option>
@@ -70,7 +92,7 @@ export default function Create() {
                         <Form.Control
                             placeholder="eg.Action"
                             name='genre'
-                            value={formValues.genre}
+                            value={media.genre}
                             onChange={changeHandler} />
                     </Form.Group>
 
@@ -79,7 +101,7 @@ export default function Create() {
                         <Form.Control
                             placeholder="eg.Actors, description..."
                             name='notes'
-                            value={formValues.notes}
+                            value={media.notes}
                             onChange={changeHandler} />
                     </Form.Group>
 
@@ -88,7 +110,7 @@ export default function Create() {
                         <Form.Control
                             placeholder="Image URL"
                             name='image'
-                            value={formValues.image}
+                            value={media.image}
                             onChange={changeHandler} />
                     </Form.Group>
 

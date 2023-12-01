@@ -28,4 +28,11 @@ export const create = async (data) => {
     return result;
 }
 
+export const edit = async (mediaId, data) => {
+
+    const result = await request.put(`${baseUrl}/${mediaId}`, data)
+
+    return result;
+}
+
 export const remove = async (mediaId) => request.remove(`${baseUrl}/${mediaId}`);
