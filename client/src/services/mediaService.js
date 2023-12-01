@@ -20,6 +20,15 @@ export const getOne = async (mediaId) =>{
 
     return result
 }
+export const getMyMedia = async (userId,type) =>{
+
+    const query = new URLSearchParams({
+        where:`_ownerId="${userId}"`,
+    })
+    const result= await request.get(`${baseUrl}?${query}`);
+
+    return result.filter(m => m.type === type)
+}
 
 export const create = async (data) => {
 

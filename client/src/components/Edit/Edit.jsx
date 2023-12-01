@@ -59,7 +59,7 @@ export default function Create() {
         <div className={styles.createForm}>
             <Form noValidate validated={validated} onSubmit={editGameSubmit}>
 
-                <Form.Label className={styles.header}>Add new Must Watch</Form.Label>
+                <Form.Label className={styles.header}>Edit Page</Form.Label>
                 <Row className="mb-3">
                     <Form.Group controlId="formGridTitle">
                         <Form.Label className={styles.label1}>Title</Form.Label>
@@ -127,7 +127,7 @@ export default function Create() {
 
 
                 <Button variant="primary" type="submit" className={styles.btn}>
-                    Add to list
+                    Apply
                 </Button>
             </Form>
         </div>

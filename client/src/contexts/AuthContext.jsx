@@ -54,6 +54,7 @@ export const AuthProvider = ({children}) =>{
       logoutHandler,
       email: auth.email,
       username:auth.username,
+      userId:auth._id,
       isAuthenticated: !!auth.accessToken,
     }
   

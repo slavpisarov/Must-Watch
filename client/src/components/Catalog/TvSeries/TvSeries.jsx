@@ -1,15 +1,19 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import styles from './TvSeries.module.css'
 
 import * as mediaService from '../../../services/mediaService'
 import CardCatalog from '../../Card/CardCatalog/CardCatalog'
+import AuthContext from '../../../contexts/AuthContext'
 
 export default function TvSeries() {
-    const [media, setMedia] = useState([])
+    const [tvSeries, setTvSeries] = useState([])
+
+    const { userId } = useContext(AuthContext)
+    const type ='tv-series'
 
     useEffect(() => {
-        mediaService.getAll()
-            .then(setMedia)
+        mediaService.getMyMedia(userId,type)
+            .then(setTvSeries)
     }, [])
     return (
         <div className={styles.home}>
@@ -17,7 +21,7 @@ export default function TvSeries() {
                 <h1>My TV Series</h1>
             </div>
                 <div className={styles.list}>
-                    {media.map(m => <CardCatalog
+                    {tvSeries.map(m => <CardCatalog
                         key={m._id}
                         {...m} />
                     )}
