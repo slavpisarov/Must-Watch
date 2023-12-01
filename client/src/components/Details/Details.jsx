@@ -40,14 +40,14 @@ export default function Details() {
             <Card className={styles.card}>
                 {/* <Card.Header className={styles.text}>{media.type === 'movie' ? 'Movie' : 'TV Series'}</Card.Header> */}
                 <div className='img-container'>
-                    <Card.Img variant='top' className={styles.image} src={media.image} />
+                {media.image !== '' && (<Card.Img variant='top' className={styles.image} src={media.image} />)}
                 </div>
                 <Card.Body>
                     <Card.Title className={styles.title}>{media.title} {media.year}</Card.Title>
                     <Card.Text className={styles.text}>Type: {media.type === 'movie' ? 'Movie' : 'TV Series'}</Card.Text>
-                    <Card.Text className={styles.text}>Genre: {media.genre} </Card.Text>
-                    <Card.Text className={styles.text}>Notes: {media.notes} </Card.Text>
-                    <Button className={styles.btns} variant="primary">Edit</Button>
+                   {media.genre !== '' && (<Card.Text className={styles.text}>Genre: {media.genre} </Card.Text>)}
+                   {media.notes !== '' && (<Card.Text className={styles.text}>Notes: {media.notes} </Card.Text>)} 
+                    <Button as={Link} to={`/media/${media._id}/edit`} className={styles.btns} variant="primary">Edit</Button>
                     <Button  onClick={deleteMedia} className={styles.btns} variant="danger">Delete</Button>
                 </Card.Body>
             </Card>

@@ -10,6 +10,7 @@ import Register from "./components/Register/Register";
 import Logout from "./components/Logout/Logout";
 import Catalog from "./components/Catalog/Catalog";
 import Details from "./components/Details/Details";
+import Edit from "./components/Edit/Edit";
 
 
 
@@ -26,6 +27,7 @@ function App() {
         <Route path='/create' element={<Create />} />
         <Route path='/catalog' element={<Catalog />} />
         <Route path='/media/:mediaId' element={<Details />} />
+        <Route path='/media/:mediaId/edit' element={<Edit />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
         <Route path='/logout' element={<Logout />} />
