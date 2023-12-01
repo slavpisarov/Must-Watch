@@ -20,9 +20,10 @@ const formInitialState = {
 
 export default function Create() {
 
+    const { mediaId } = useParams()
     const navigate = useNavigate()
     const [media,setMedia] = useState(formInitialState)
-    const { mediaId } = useParams()
+    const [validated, setValidated] = useState(false);
 
     useEffect(()=>{
         mediaService.getOne(mediaId)
@@ -39,6 +40,10 @@ export default function Create() {
     const editGameSubmit = async (e) =>{
         e.preventDefault()
 
+        if(e.currentTarget.checkValidity() === false){
+            return setValidated(true)
+        }
+
         const data = Object.fromEntries(new FormData(e.currentTarget));
 
         try {
@@ -52,7 +57,7 @@ export default function Create() {
 
     return (
         <div className={styles.createForm}>
-            <Form noValidate onSubmit={editGameSubmit}>
+            <Form noValidate validated={validated} onSubmit={editGameSubmit}>
 
                 <Form.Label className={styles.header}>Add new Must Watch</Form.Label>
                 <Row className="mb-3">
@@ -72,6 +77,9 @@ export default function Create() {
                         <Form.Label className={styles.label}>Year</Form.Label>
                         <Form.Control
                             placeholder="eg.2018"
+                            type='number'
+                            min={1900}
+                            max={2030}
                             name='year'
                             value={media.year}
                             onChange={changeHandler} />

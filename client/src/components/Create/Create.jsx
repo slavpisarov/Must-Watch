@@ -50,6 +50,9 @@ export default function Create() {
                         <Form.Label className={styles.label}>Year</Form.Label>
                         <Form.Control
                             placeholder="eg.2018"
+                            type='number'
+                            min={1900}
+                            max={2030}
                             name='year'
                             value={formValues.year}
                             onChange={changeHandler} />
