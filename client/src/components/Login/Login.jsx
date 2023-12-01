@@ -1,5 +1,6 @@
 
 import { useContext } from 'react';
+import { Link} from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
@@ -50,6 +51,9 @@ export default function Login() {
 
                 </Form.Group>
 
+                <span className={styles.question}>Don't have an account yet?
+                    <Link to='/register' className={styles.link}>Register</Link>
+                </span>
 
                 <Button type="submit" className={styles.btn}>Login</Button>
             </Form>

@@ -1,5 +1,7 @@
 
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
+import { Link} from 'react-router-dom'
+
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
@@ -74,6 +76,9 @@ export default function Register() {
                     <Form.Control.Feedback type='invalid'>{formValues.rePassword ==='' ? 'Repeat password is required': 'Passwords do not match'}</Form.Control.Feedback>
                 </Form.Group>
 
+                <span className={styles.question}>Already have an account?
+                    <Link to='/login' className={styles.link}>Login</Link>
+                </span>
 
                 <Button type="submit" className={styles.btn}>Register</Button>
             </Form>

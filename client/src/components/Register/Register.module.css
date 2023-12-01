@@ -24,5 +24,14 @@
     font-size: 2em;
     display: block;
     text-align: center;
-
 }
+
+.question{
+    color: rgb(255, 255, 255);
+    font-size: 0.7em;
+}
+
+.link{
+    margin-left: 0.4em;
+}
+
