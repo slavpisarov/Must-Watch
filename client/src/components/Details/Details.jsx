@@ -43,7 +43,7 @@ export default function Details() {
                     <Card.Img variant='top' className={styles.image} src={media.image} />
                 </div>
                 <Card.Body>
-                    <Card.Title className={styles.title}>{media.title} {` ( ${media.year} )`}</Card.Title>
+                    <Card.Title className={styles.title}>{media.title} {media.year}</Card.Title>
                     <Card.Text className={styles.text}>Type: {media.type === 'movie' ? 'Movie' : 'TV Series'}</Card.Text>
                     <Card.Text className={styles.text}>Genre: {media.genre} </Card.Text>
                     <Card.Text className={styles.text}>Notes: {media.notes} </Card.Text>
