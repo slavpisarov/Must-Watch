@@ -11,6 +11,8 @@ import Logout from "./components/Logout/Logout";
 import Catalog from "./components/Catalog/Catalog";
 import Details from "./components/Details/Details";
 import Edit from "./components/Edit/Edit";
+import Movies from "./components/Catalog/Movies/Movies";
+import TvSeries from "./components/Catalog/TvSeries/TvSeries";
 
 
 
@@ -26,6 +28,8 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/create' element={<Create />} />
         <Route path='/catalog' element={<Catalog />} />
+        <Route path='/catalog/movies' element={<Movies />} />
+        <Route path='/catalog/tv-series' element={<TvSeries />} />
         <Route path='/media/:mediaId' element={<Details />} />
         <Route path='/media/:mediaId/edit' element={<Edit />} />
         <Route path='/login' element={<Login />} />

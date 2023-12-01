@@ -1,0 +1,36 @@
+.home{
+    /* display: flex; */
+    position: relative;
+    margin: 0 auto;
+    flex-direction: column;
+    max-width: 95%;
+    justify-content:space-between;
+    gap: 1em;
+    padding: 1em 0;
+    margin: 1 0;
+    height: 88vh;
+}
+
+.head{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: space-evenly;
+    background-color: #171717dc;
+    color: white;
+    padding: 0 1.5em;
+    margin: -0.5em;
+}
+
+.list{
+    display: flex;
+    text-align: center;
+    padding-top: 1em;
+    gap: 0.3em;
+}
+
+.list > *{
+    max-width: 12vw;
+    /* max-height: 35vh; */
+}

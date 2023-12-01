@@ -7,9 +7,10 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 import styles from './Details.module.css'
+import AuthContext from '../../contexts/AuthContext';
 
 export default function Details() {
-    // const { email,userId } = useContext(AuthContext)
+    const { email, userId } = useContext(AuthContext)
     const navigate = useNavigate()
     const [media, setMedia] = useState([])
     const { mediaId } = useParams();
@@ -21,10 +22,10 @@ export default function Details() {
     }, [mediaId])
 
 
-    const deleteMedia = async () =>{
+    const deleteMedia = async () => {
 
         const hasConfirmed = confirm(`Are you sure you want to delete ${media.title} from ${media.year}`);
-        if(hasConfirmed){
+        if (hasConfirmed) {
             await mediaService.remove(mediaId)
 
             navigate('/')
@@ -40,15 +41,19 @@ export default function Details() {
             <Card className={styles.card}>
                 {/* <Card.Header className={styles.text}>{media.type === 'movie' ? 'Movie' : 'TV Series'}</Card.Header> */}
                 <div className='img-container'>
-                {media.image !== '' && (<Card.Img variant='top' className={styles.image} src={media.image} />)}
+                    {media.image !== '' && (<Card.Img variant='top' className={styles.image} src={media.image} />)}
                 </div>
                 <Card.Body>
                     <Card.Title className={styles.title}>{media.title} {media.year}</Card.Title>
                     <Card.Text className={styles.text}>Type: {media.type === 'movie' ? 'Movie' : 'TV Series'}</Card.Text>
-                   {media.genre !== '' && (<Card.Text className={styles.text}>Genre: {media.genre} </Card.Text>)}
-                   {media.notes !== '' && (<Card.Text className={styles.text}>Notes: {media.notes} </Card.Text>)} 
-                    <Button as={Link} to={`/media/${media._id}/edit`} className={styles.btns} variant="primary">Edit</Button>
-                    <Button  onClick={deleteMedia} className={styles.btns} variant="danger">Delete</Button>
+                    {media.genre !== '' && (<Card.Text className={styles.text}>Genre: {media.genre} </Card.Text>)}
+                    {media.notes !== '' && (<Card.Text className={styles.text}>Notes: {media.notes} </Card.Text>)}
+                    {userId === media._ownerId && (
+                        <>
+                            <Button as={Link} to={`/media/${media._id}/edit`} className={styles.btns} variant="primary">Edit</Button>
+                            <Button onClick={deleteMedia} className={styles.btns} variant="danger">Delete</Button>
+                        </>
+                    )}
                 </Card.Body>
             </Card>
         </div>
