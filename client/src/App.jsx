@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { AuthProvider }from './contexts/AuthContext'
+import { AuthProvider } from './contexts/AuthContext'
 import './styles.css'
 
 import Header from "./components/Header/Header";
@@ -13,6 +13,7 @@ import Details from "./components/Details/Details";
 import Edit from "./components/Edit/Edit";
 import Movies from "./components/Catalog/Movies/Movies";
 import TvSeries from "./components/Catalog/TvSeries/TvSeries";
+import AuthGuard from "./guards/AuthGuard";
 
 
 
@@ -26,15 +27,18 @@ function App() {
       <Routes>
 
         <Route path='/' element={<Home />} />
-        <Route path='/create' element={<Create />} />
         <Route path='/catalog' element={<Catalog />} />
-        <Route path='/catalog/movies' element={<Movies />} />
-        <Route path='/catalog/tv-series' element={<TvSeries />} />
         <Route path='/media/:mediaId' element={<Details />} />
-        <Route path='/media/:mediaId/edit' element={<Edit />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
-        <Route path='/logout' element={<Logout />} />
+
+        <Route element={<AuthGuard />}>
+          <Route path='/create' element={<Create />} />
+          <Route path='/catalog/tv-series' element={<TvSeries />} />
+          <Route path='/catalog/movies' element={<Movies />} />
+          <Route path='/media/:mediaId/edit' element={<Edit />} />
+          <Route path='/logout' element={<Logout />} />
+        </Route>
       </Routes>
     </AuthProvider>
   )
