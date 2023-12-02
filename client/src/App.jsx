@@ -14,6 +14,7 @@ import Edit from "./components/Edit/Edit";
 import Movies from "./components/Catalog/Movies/Movies";
 import TvSeries from "./components/Catalog/TvSeries/TvSeries";
 import AuthGuard from "./guards/AuthGuard";
+import GuestGuard from "./guards/GuestGuard";
 
 
 
@@ -29,8 +30,11 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/catalog' element={<Catalog />} />
         <Route path='/media/:mediaId' element={<Details />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/register' element={<Register />} />
+
+        <Route element={<GuestGuard />}>
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
+        </Route>
 
         <Route element={<AuthGuard />}>
           <Route path='/create' element={<Create />} />
