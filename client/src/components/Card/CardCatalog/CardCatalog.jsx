@@ -14,7 +14,7 @@ export default function CardMain({
 
     return (
         <Card className={styles.card}>
-            <Card.Header className={styles.text}>{type === 'movie'?'Movie':'TV Series'}</Card.Header>
+            <Card.Header className={styles.textType}>{type === 'movie'?'Movie':'TV Series'}</Card.Header>
             <div >
                 <Card.Img variant='top' className={styles.image} src={image} />
             </div>

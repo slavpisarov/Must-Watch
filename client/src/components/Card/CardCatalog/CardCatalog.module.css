@@ -1,8 +1,6 @@
 .card {
-
     background-color: #171717dc;
-    flex: 1 1 8em;
-    /* height: ; */
+    /* flex: 1 1 12vw; */
 }
 
 .image {
@@ -14,8 +12,15 @@
 }
 
 .text{
-    color: white;
-    margin: -0.5em 0 0 0;
+    font-size: 0.9em;
+    color: rgb(162, 162, 162);
+    margin: 0.5em 0 0 0;
+}
+
+.textType{
+    font-size: 0.9em;
+    color: rgb(162, 162, 162);
+    margin: -0.3em 0;
 }
 
 .title{
