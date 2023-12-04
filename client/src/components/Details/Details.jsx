@@ -75,28 +75,11 @@ export default function Details() {
                     </Card.Body>
                 </Card>
 
-                {isAuthenticated && (
-                    <Form noValidate validated={validated} onSubmit={onSubmit} className={styles.form}>
-                        <Form.Label className={styles.headComment}>Add New Comment</Form.Label>
-                        <Form.Group  >
-                            <Form.Control className={styles.add}
-                                required
-                                placeholder='Comment..'
-                                type="text"
-                                name='comment'
-                                value={formValues.comment}
-                                onChange={changeHandler}
-                            />
-                            <Form.Control.Feedback type='invalid'>Cannot send empty comment</Form.Control.Feedback>
-                        </Form.Group>
-                        <Button type="submit" className={styles.btn}>Add Comment</Button>
-                    </Form>
-                )}
 
             </div>
             <div className={styles.commentSection}>
                 <h5 className={styles.heading}>Comments:</h5>
-                <ul>
+                <ul className={styles.commentList}>
                     {comments.map(comment => (
                         <li key={comment._id}>
                             <p>{comment.owner}: {comment.text}</p>
@@ -105,6 +88,23 @@ export default function Details() {
                 </ul>
             </div>
 
+                    {isAuthenticated && (
+                        <Form noValidate validated={validated} onSubmit={onSubmit} className={styles.form}>
+                            <Form.Label className={styles.headComment}>Add New Comment</Form.Label>
+                            <Form.Group  >
+                                <Form.Control className={styles.add}
+                                    required
+                                    placeholder='Comment..'
+                                    type="text"
+                                    name='comment'
+                                    value={formValues.comment}
+                                    onChange={changeHandler}
+                                />
+                                <Form.Control.Feedback type='invalid'>Cannot send empty comment</Form.Control.Feedback>
+                            </Form.Group>
+                            <Button type="submit" className={styles.btn}>Add Comment</Button>
+                        </Form>
+                    )}
         </>
     );
 }

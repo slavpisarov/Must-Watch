@@ -16,6 +16,7 @@
     flex-direction: row;
     max-width: 70%;
     margin: 0 auto;
+
 }
 
 .image {
@@ -47,12 +48,13 @@
 
 .form{
     margin:0 auto;
-    max-width: 50%;
+    max-width: 40%;
     color:white;
     background-color: #171717dc;
     margin-top: 0.5em;
-    padding: 0.3em;
+    padding: 0.5em;
     margin-bottom: 1em;
+
 }
 
 .headComment{
@@ -66,20 +68,41 @@
 }
 
 .btn{
-    margin: 0.3em 0;
+    margin: 1em 0 0.5em 0;
     padding: 0 0.4em;
 }
 
 
 /* comments */
 .commentSection{
-    max-width: 60%;
+    max-width: 80%;
     margin: 0 auto;
     margin-top: 0.5em;
+
 }
 .heading{
     color: white;
     margin-left: 0.5em;
+}
+
+.commentList{
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.commentList>*{
+    background-color:#171717dc;
+    list-style-type: none;
+    padding: 0.3em 0 0 1.5em;
+    flex: 1 1 48%;
+    /* max-height: 2.5em; */
+    max-width: 48%;
+    border-radius: 4em;
+    color: white;
+    border:1px solid white;
+    overflow: hidden;
+
 }
 
 
