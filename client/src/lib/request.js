@@ -1,6 +1,6 @@
 const buildOptions = (data) =>{
     const options = {};
-
+    
     if (data) {
         options.body = JSON.stringify(data)
         options.headers = {
@@ -43,3 +43,22 @@ export const post = request.bind(null,'POST')
 export const put = request.bind(null,'PUT')
 export const remove = request.bind(null,'DELETE')
 
+// export const putComments =  ()await fetch(`${baseUrl}/${mediaId}`, {
+//     method: 'PUT',
+//     headers: {
+//         'Content-Type': 'application/json',
+//         'X-Admin': localStorage.getItem('accessToken')
+//     },
+//     body: JSON.stringify({ ...movie, commentsCount: movie.commentsCount + 1 })
+// })
+
+export async function putComments(url,data) {
+    return await fetch(url, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-Admin': localStorage.getItem('accessToken')
+        },
+        body: JSON.stringify(data)
+    })
+}

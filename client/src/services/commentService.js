@@ -15,13 +15,13 @@ export const getAll = async (mediaId) =>{
 }
 
 
-export const create = async (mediaId, text) =>{
+export const create = async (mediaId, text, owner) =>{
     
     const newComment = await request.post(baseUrl, {
         mediaId,
         text,
+        owner
     });
     
-    console.log(newComment);
     return newComment;
 }

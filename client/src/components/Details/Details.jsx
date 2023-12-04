@@ -14,12 +14,11 @@ import useForm from '../../hooks/useForm';
 
 
 export default function Details() {
-    const { userId } = useContext(AuthContext)
+    const { userId, isAuthenticated, username } = useContext(AuthContext)
     const navigate = useNavigate()
     const [media, setMedia] = useState([])
     const [comments, setComments] = useState([])
     const { mediaId } = useParams();
-
 
     useEffect(() => {
         mediaService.getOne(mediaId)
@@ -29,26 +28,27 @@ export default function Details() {
             .then(setComments)
     }, [mediaId])
 
-    const addCommentHandler = async (values) =>{
-        console.log(values.comment);
-        const newComment = await commentService.create(mediaId,values.comment)
+    const addCommentHandler = async ({comment}) => {
+        const newComment = await commentService.create(mediaId, comment, username)
         await mediaService.addComment(mediaId)
 
-        setComments(state => [...state,newComment])
+        setComments(state => [...state, { ...newComment}])
+        formValues.comment = '';
+
     }
-    
+
     const deleteMedia = async () => {
-        
+
         const hasConfirmed = confirm(`Are you sure you want to delete ${media.title} from ${media.year}`);
         if (hasConfirmed) {
             await mediaService.remove(mediaId)
-            
+
             navigate('/')
         }
     }
 
-    let formInitialState = {comment:''}
-    const { formValues, changeHandler, onSubmit, validated} = useForm(formInitialState, addCommentHandler);
+    let formInitialState = { comment: '' }
+    const { formValues, changeHandler, onSubmit, validated } = useForm(formInitialState, addCommentHandler);
 
     return (
         <>
@@ -74,26 +74,35 @@ export default function Details() {
                         )}
                     </Card.Body>
                 </Card>
-                <Form noValidate validated={validated} onSubmit={onSubmit} className={styles.form}>
-                    <Form.Label className={styles.headComment}>Add New Comment</Form.Label>
-                    <Form.Group  >
-                        <Form.Control className={styles.add}
-                            required
-                            placeholder='Comment..'
-                            type="text"
-                            name='comment'
-                            value={formValues.comment}
-                            onChange={changeHandler}
-                        />
-                        <Form.Control.Feedback type='invalid'>Cannot send empty comment</Form.Control.Feedback>
-                    </Form.Group>
-                    <Button type="submit" className={styles.btn}>Add Comment</Button>
-                </Form>
+
+                {isAuthenticated && (
+                    <Form noValidate validated={validated} onSubmit={onSubmit} className={styles.form}>
+                        <Form.Label className={styles.headComment}>Add New Comment</Form.Label>
+                        <Form.Group  >
+                            <Form.Control className={styles.add}
+                                required
+                                placeholder='Comment..'
+                                type="text"
+                                name='comment'
+                                value={formValues.comment}
+                                onChange={changeHandler}
+                            />
+                            <Form.Control.Feedback type='invalid'>Cannot send empty comment</Form.Control.Feedback>
+                        </Form.Group>
+                        <Button type="submit" className={styles.btn}>Add Comment</Button>
+                    </Form>
+                )}
 
             </div>
             <div className={styles.commentSection}>
                 <h5 className={styles.heading}>Comments:</h5>
-
+                <ul>
+                    {comments.map(comment => (
+                        <li key={comment._id}>
+                            <p>{comment.owner}: {comment.text}</p>
+                        </li>
+                    ))}
+                </ul>
             </div>
 
         </>

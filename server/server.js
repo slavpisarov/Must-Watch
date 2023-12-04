@@ -1490,6 +1490,7 @@
                 "type": "tv-series",
                 "genre": "Sitcom",
                 "notes": "Charlie Sheen comedy ",
+                "commentsCount": 0,
                 "image": "https://m.media-amazon.com/images/I/618DzFgITnL._AC_UF894,1000_QL80_.jpg",
                 "_createdOn": 1701516135257,
                 "_id": "52089dc4-a652-4f9c-af7e-0802c829389b"
@@ -1501,6 +1502,7 @@
                 "type": "movie",
                 "genre": "Fantasy",
                 "notes": "Interesting wizzard movies",
+                "commentsCount": 0,
                 "image": "https://www.themoviedb.org/t/p/w500/aWxwnYoe8p2d2fcxOqtvAtJ72Rw.jpg",
                 "_createdOn": 1701516135257,
                 "_id": "3564027f-adcd-4425-b2c0-1253d2386c0c"
@@ -1512,6 +1514,7 @@
                 "type": "tv-series",
                 "genre": "Action Thriller",
                 "notes": "Birmingham gang movie",
+                "commentsCount": 0,
                 "image": "https://m.media-amazon.com/images/M/MV5BZjYzZDgzMmYtYjY5Zi00YTk1LThhMDYtNjFlNzM4MTZhYzgyXkEyXkFqcGdeQXVyMTE5NDQ1MzQ3._V1_.jpghttps://m.media-amazon.com/images/M/MV5BZjYzZDgzMmYtYjY5Zi00YTk1LThhMDYtNjFlNzM4MTZhYzgyXkEyXkFqcGdeQXVyMTE5NDQ1MzQ3._V1_.jpg",
                 "_createdOn": 1701516135257,
                 "_id": "18bfdb21-333b-42bd-a32c-c114263f2569"
@@ -1523,6 +1526,7 @@
                 "type": "movie",
                 "genre": " Fantasy",
                 "notes": "Jason Momoa superhero movie",
+                "commentsCount": 0,
                 "image": "https://images.immediate.co.uk/production/volatile/sites/3/2018/12/Aquaman-Movie-Poster-Aquaman-Classic-Costume-e0110b2.jpg?resize=768,574",
                 "_createdOn": 1701516135257,
                 "_id": "c64db398-91cd-487c-b900-86058c0422f8"

@@ -1,31 +1,31 @@
-import * as request  from "../lib/request";
+import * as request from "../lib/request";
 
 const tempUrl = 'http://localhost:3030/jsonstore/media'
 const baseUrl = 'http://localhost:3030/data/media'
 
-export const getHomePage = async () =>{
-    const result= await request.get(tempUrl);
+export const getHomePage = async () => {
+    const result = await request.get(tempUrl);
 
     return Object.values(result)
 }
 
-export const getAll = async () =>{
-    const result= await request.get(baseUrl);
+export const getAll = async () => {
+    const result = await request.get(baseUrl);
 
     return Object.values(result)
 }
 
-export const getOne = async (mediaId) =>{
-    const result= await request.get(`${baseUrl}/${mediaId}`);
+export const getOne = async (mediaId) => {
+    const result = await request.get(`${baseUrl}/${mediaId}`);
 
     return result
 }
-export const getMyMedia = async (userId,type) =>{
+export const getMyMedia = async (userId, type) => {
 
     const query = new URLSearchParams({
-        where:`_ownerId="${userId}"`,
+        where: `_ownerId="${userId}"`,
     })
-    const result= await request.get(`${baseUrl}?${query}`);
+    const result = await request.get(`${baseUrl}?${query}`);
 
     return result.filter(m => m.type === type)
 }
@@ -47,8 +47,17 @@ export const edit = async (mediaId, data) => {
 export const addComment = async (mediaId) => {
 
     const movie = await getOne(mediaId)
-    
-    const result = await request.put(`${baseUrl}/${mediaId}`, {...movie, commentsCount:movie.commentsCount+1})
+    const result = await request.putComments(`${baseUrl}/${mediaId}`, { ...movie, commentsCount: movie.commentsCount + 1 })
+    //  await request.put(`${baseUrl}/${mediaId}`, {...movie, commentsCount:movie.commentsCount+1})
+
+    // const result = await fetch(`${baseUrl}/${mediaId}`, {
+    //     method: 'PUT',
+    //     headers: {
+    //         'Content-Type': 'application/json',
+    //         'X-Admin': localStorage.getItem('accessToken')
+    //     },
+    //     body: JSON.stringify({ ...movie, commentsCount: movie.commentsCount + 1 })
+    // })
 
     return result;
 }
