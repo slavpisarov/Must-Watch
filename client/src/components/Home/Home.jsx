@@ -17,7 +17,7 @@ export default function Home() {
             <div className={styles.desc}>
 
                 <p>
-                    You keep hearing about great movies and series, but when you have spare time you can't think of any?
+                    You keep hearing about great movies and series, but when you have free time you can't think of any?
                 </p>
                 <p>
                     Never forget your <span>Must Watch!</span>

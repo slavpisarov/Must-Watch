@@ -1,4 +1,4 @@
-.home{
+.details{
     text-align: center;
 }
 
@@ -6,21 +6,21 @@
     display: inline-block;
     background-color: #171717dc;
     color: white;
-    margin: 0.5em;
+    margin: 0.2em;
+    padding: 0 1em;
 }
 
 .card {
     background-color: #171717dc;
     display: flex;
     flex-direction: row;
-    max-width: 80%;
+    max-width: 70%;
     margin: 0 auto;
 }
 
 .image {
     padding: 0.5em;
     margin: 0 auto;
-    /* object-fit: cover; */
     width: 100%; 
     height: 40vh; 
     border-radius: 2%;
@@ -42,3 +42,44 @@
 .btns{
     margin-right: 1.5em;
 }
+
+/* form */
+
+.form{
+    margin:0 auto;
+    max-width: 50%;
+    color:white;
+    background-color: #171717dc;
+    margin-top: 0.5em;
+    padding: 0.3em;
+    margin-bottom: 1em;
+}
+
+.headComment{
+    font-size: 1.2em;
+}
+
+.add{
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0.1em 0.6em;
+}
+
+.btn{
+    margin: 0.3em 0;
+    padding: 0 0.4em;
+}
+
+
+/* comments */
+.commentSection{
+    max-width: 60%;
+    margin: 0 auto;
+    margin-top: 0.5em;
+}
+.heading{
+    color: white;
+    margin-left: 0.5em;
+}
+
+

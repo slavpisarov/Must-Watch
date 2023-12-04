@@ -18,7 +18,7 @@ export default function Login() {
 
     const {loginSubmitHandler,loginErr} = useContext(AuthContext)
 
-    const { formValues, changeHandler, onSubmit, validated, errors} = useForm(formInitialState, loginSubmitHandler);
+    const { formValues, changeHandler, onSubmit, validated} = useForm(formInitialState, loginSubmitHandler);
 
     return (
         <div className={styles.form}>
