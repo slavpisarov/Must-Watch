@@ -22,7 +22,7 @@ export default function Create() {
     const navigate = useNavigate()
 
     const addMedia = async (mediaData) => {
-        await mediaService.create(mediaData)
+        await mediaService.create({...mediaData,commentsCount:0})
         navigate(mediaData.type === 'movie' ? '/catalog/movies' : '/catalog/tv-series')
     }
 

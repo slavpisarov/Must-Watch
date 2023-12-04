@@ -44,4 +44,13 @@ export const edit = async (mediaId, data) => {
     return result;
 }
 
+export const addComment = async (mediaId) => {
+
+    const movie = await getOne(mediaId)
+    
+    const result = await request.put(`${baseUrl}/${mediaId}`, {...movie, commentsCount:movie.commentsCount+1})
+
+    return result;
+}
+
 export const remove = async (mediaId) => request.remove(`${baseUrl}/${mediaId}`);

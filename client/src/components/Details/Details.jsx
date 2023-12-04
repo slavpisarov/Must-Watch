@@ -32,9 +32,9 @@ export default function Details() {
     const addCommentHandler = async (values) =>{
         console.log(values.comment);
         const newComment = await commentService.create(mediaId,values.comment)
+        await mediaService.addComment(mediaId)
 
         setComments(state => [...state,newComment])
-        console.log(comments);
     }
     
     const deleteMedia = async () => {

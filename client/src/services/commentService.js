@@ -15,7 +15,6 @@ export const getAll = async (mediaId) =>{
 }
 
 
-
 export const create = async (mediaId, text) =>{
     
     const newComment = await request.post(baseUrl, {
