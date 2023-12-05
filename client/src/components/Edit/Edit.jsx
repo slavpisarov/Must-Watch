@@ -4,7 +4,6 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 
 import styles from './Edit.module.css'
-import useForm from '../../hooks/useForm';
 import * as mediaService from '../../services/mediaService'
 import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
@@ -48,7 +47,7 @@ export default function Create() {
 
         try {
             await mediaService.edit(mediaId, data);
-            navigate('/')
+            navigate(`/catalog/${data.type === 'movie'?'movies':'tv-series'}`)
 
         } catch (error) {
             console.log(error);

@@ -20,6 +20,8 @@ export default function Details() {
     const [comments, setComments] = useState([])
     const { mediaId } = useParams();
 
+    throw new Error('Details Page Error')
+
     useEffect(() => {
         mediaService.getOne(mediaId)
             .then(setMedia)

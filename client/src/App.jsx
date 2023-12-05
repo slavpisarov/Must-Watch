@@ -16,13 +16,13 @@ import TvSeries from "./components/Catalog/TvSeries/TvSeries";
 import AuthGuard from "./guards/AuthGuard";
 import GuestGuard from "./guards/GuestGuard";
 import PageNotFound from "./components/404/404";
-
-
+import ErrorBoundary from './components/ErrorBoundary'
 
 
 function App() {
 
   return (
+    <ErrorBoundary>
     <AuthProvider>
       <Header />
 
@@ -49,6 +49,7 @@ function App() {
 
       </Routes>
     </AuthProvider>
+    </ErrorBoundary>
   )
 }
 
