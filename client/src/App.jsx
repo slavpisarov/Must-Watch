@@ -15,6 +15,7 @@ import Movies from "./components/Catalog/Movies/Movies";
 import TvSeries from "./components/Catalog/TvSeries/TvSeries";
 import AuthGuard from "./guards/AuthGuard";
 import GuestGuard from "./guards/GuestGuard";
+import PageNotFound from "./components/404/404";
 
 
 
@@ -43,6 +44,9 @@ function App() {
           <Route path='/media/:mediaId/edit' element={<Edit />} />
           <Route path='/logout' element={<Logout />} />
         </Route>
+
+        <Route path='*' element={<PageNotFound />} />
+
       </Routes>
     </AuthProvider>
   )
