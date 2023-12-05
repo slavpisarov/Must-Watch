@@ -28,18 +28,18 @@ export default function Details() {
             .then(setComments)
     }, [mediaId])
 
-    const addCommentHandler = async ({comment}) => {
+    const addCommentHandler = async ({ comment }) => {
         const newComment = await commentService.create(mediaId, comment, username)
         await mediaService.addComment(mediaId)
 
-        setComments(state => [...state, { ...newComment}])
+        setComments(state => [...state, { ...newComment }])
         formValues.comment = '';
 
     }
 
     const deleteMedia = async () => {
 
-        const hasConfirmed = confirm(`Are you sure you want to delete ${media.title} from ${media.year}`);
+        const hasConfirmed = confirm(`Are you sure you want to delete ${media.title} from your ${media.type === 'movie' ? 'Movie' : 'TV Series'} list?`);
         if (hasConfirmed) {
             await mediaService.remove(mediaId)
 
@@ -57,13 +57,13 @@ export default function Details() {
                     <h1>Details page</h1>
                 </div>
                 <Card className={styles.card}>
-                    {/* <Card.Header className={styles.text}>{media.type === 'movie' ? 'Movie' : 'TV Series'}</Card.Header> */}
                     <div className='img-container'>
                         {media.image !== '' && (<Card.Img variant='top' className={styles.image} src={media.image} />)}
                     </div>
                     <Card.Body>
-                        <Card.Title className={styles.title}>{media.title} {media.year}</Card.Title>
-                        <Card.Text className={styles.text}>Type: {media.type === 'movie' ? 'Movie' : 'TV Series'}</Card.Text>
+                        <Card.Text className={styles.text}>{media.type === 'movie' ? 'Movie' : 'TV Series'}</Card.Text>
+                        <Card.Title className={styles.title}>{media.title}</Card.Title>
+                        {media.year !== '' && (<Card.Text className={styles.text}>Year: {media.year} </Card.Text>)}
                         {media.genre !== '' && (<Card.Text className={styles.text}>Genre: {media.genre} </Card.Text>)}
                         {media.notes !== '' && (<Card.Text className={styles.text}>Notes: {media.notes} </Card.Text>)}
                         {userId === media._ownerId && (
@@ -77,34 +77,36 @@ export default function Details() {
 
 
             </div>
-            <div className={styles.commentSection}>
-                <h5 className={styles.heading}>Comments:</h5>
-                <ul className={styles.commentList}>
-                    {comments.map(comment => (
-                        <li key={comment._id}>
-                            <p>{comment.owner}: {comment.text}</p>
-                        </li>
-                    ))}
-                </ul>
-            </div>
+            {comments.length && (
+                <div className={styles.commentSection}>
+                    <h5 className={styles.heading}>Comments:</h5>
+                    <ul className={styles.commentList}>
+                        {comments.map(comment => (
+                            <li key={comment._id}>
+                                <p>{comment.owner}: {comment.text}</p>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            )}
 
-                    {isAuthenticated && (
-                        <Form noValidate validated={validated} onSubmit={onSubmit} className={styles.form}>
-                            <Form.Label className={styles.headComment}>Add New Comment</Form.Label>
-                            <Form.Group  >
-                                <Form.Control className={styles.add}
-                                    required
-                                    placeholder='Comment..'
-                                    type="text"
-                                    name='comment'
-                                    value={formValues.comment}
-                                    onChange={changeHandler}
-                                />
-                                <Form.Control.Feedback type='invalid'>Cannot send empty comment</Form.Control.Feedback>
-                            </Form.Group>
-                            <Button type="submit" className={styles.btn}>Add Comment</Button>
-                        </Form>
-                    )}
+            {isAuthenticated && (
+                <Form noValidate validated={validated} onSubmit={onSubmit} className={styles.form}>
+                    <Form.Label className={styles.headComment}>Add New Comment</Form.Label>
+                    <Form.Group  >
+                        <Form.Control className={styles.add}
+                            required
+                            placeholder='Comment..'
+                            type="text"
+                            name='comment'
+                            value={formValues.comment}
+                            onChange={changeHandler}
+                        />
+                        <Form.Control.Feedback type='invalid'>Cannot send empty comment</Form.Control.Feedback>
+                    </Form.Group>
+                    <Button type="submit" className={styles.btn}>Add Comment</Button>
+                </Form>
+            )}
         </>
     );
 }
