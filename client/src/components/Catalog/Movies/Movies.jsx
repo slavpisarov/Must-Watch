@@ -8,11 +8,11 @@ import AuthContext from '../../../contexts/AuthContext'
 export default function Movies() {
     const [movies, setMovies] = useState([])
 
-    const { userId }= useContext(AuthContext)
+    const { userId } = useContext(AuthContext)
     const type = 'movie'
 
     useEffect(() => {
-        mediaService.getMyMedia(userId,type)
+        mediaService.getMyMedia(userId, type)
             .then(setMovies)
     }, [])
     return (
@@ -20,12 +20,13 @@ export default function Movies() {
             <div className={styles.head}>
                 <h1>My Movies</h1>
             </div>
+            {movies.length ? (
                 <div className={styles.list}>
-                    {movies.map(m => <CardCatalog
-                        key={m._id}
-                        {...m} />
-                    )}
-            </div>
+                    {movies.map(m => <CardCatalog key={m._id} {...m} />)}
+                </div>
+            ):(
+                <h4 className={styles.empty}>You have no Movies on your list</h4>
+            )}
         </div>
     )
 }

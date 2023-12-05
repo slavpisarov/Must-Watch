@@ -9,10 +9,10 @@ export default function TvSeries() {
     const [tvSeries, setTvSeries] = useState([])
 
     const { userId } = useContext(AuthContext)
-    const type ='tv-series'
+    const type = 'tv-series'
 
     useEffect(() => {
-        mediaService.getMyMedia(userId,type)
+        mediaService.getMyMedia(userId, type)
             .then(setTvSeries)
     }, [])
     return (
@@ -20,12 +20,14 @@ export default function TvSeries() {
             <div className={styles.head}>
                 <h1>My TV Series</h1>
             </div>
+
+            {tvSeries.length ? (
                 <div className={styles.list}>
-                    {tvSeries.map(m => <CardCatalog
-                        key={m._id}
-                        {...m} />
-                    )}
-            </div>
+                    {tvSeries.map(m => <CardCatalog key={m._id} {...m} />)}
+                </div>
+            ):(
+                <h4 className={styles.empty}>You have no TV Series on your list</h4>
+            )}
         </div>
     )
 }
