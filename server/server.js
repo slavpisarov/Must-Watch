@@ -1340,147 +1340,55 @@
         }
     };
     var seedData = {
-        recipes: {
-            "3987279d-0ad4-4afb-8ca9-5b256ae3b298": {
-                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-                name: "Easy Lasagna",
-                img: "assets/lasagna.jpg",
-                ingredients: [
-                    "1 tbsp Ingredient 1",
-                    "2 cups Ingredient 2",
-                    "500 g  Ingredient 3",
-                    "25 g Ingredient 4"
-                ],
-                steps: [
-                    "Prepare ingredients",
-                    "Mix ingredients",
-                    "Cook until done"
-                ],
-                _createdOn: 1613551279012
-            },
-            "8f414b4f-ab39-4d36-bedb-2ad69da9c830": {
-                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-                name: "Grilled Duck Fillet",
-                img: "assets/roast.jpg",
-                ingredients: [
-                    "500 g  Ingredient 1",
-                    "3 tbsp Ingredient 2",
-                    "2 cups Ingredient 3"
-                ],
-                steps: [
-                    "Prepare ingredients",
-                    "Mix ingredients",
-                    "Cook until done"
-                ],
-                _createdOn: 1613551344360
-            },
-            "985d9eab-ad2e-4622-a5c8-116261fb1fd2": {
-                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-                name: "Roast Trout",
-                img: "assets/fish.jpg",
-                ingredients: [
-                    "4 cups Ingredient 1",
-                    "1 tbsp Ingredient 2",
-                    "1 tbsp Ingredient 3",
-                    "750 g  Ingredient 4",
-                    "25 g Ingredient 5"
-                ],
-                steps: [
-                    "Prepare ingredients",
-                    "Mix ingredients",
-                    "Cook until done"
-                ],
-                _createdOn: 1613551388703
-            }
-        },
         comments: {
-            "0a272c58-b7ea-4e09-a000-7ec988248f66": {
-                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-                content: "Great recipe!",
-                recipeId: "8f414b4f-ab39-4d36-bedb-2ad69da9c830",
-                _createdOn: 1614260681375,
-                _id: "0a272c58-b7ea-4e09-a000-7ec988248f66"
+            "5828d212-10dc-44f0-b122-1dfb3fc1fd05":{
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "mediaId": "4208d4c3-a77b-4950-9b6a-5a12c4209d95",
+                "text": "Great movie!",
+                "owner": "Peter",
+                "_createdOn": 1701845172270,
+                "_id": "5828d212-10dc-44f0-b122-1dfb3fc1fd05"
+            },
+            "9a559070-8c16-465d-9dfc-d03fe5dd90bc":{
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "mediaId": "4208d4c3-a77b-4950-9b6a-5a12c4209d95",
+                "text": "I saw it on cinema, when it came out, but I want to watch it again.",
+                "owner": "Peter",
+                "_createdOn": 1701845200439,
+                "_id": "9a559070-8c16-465d-9dfc-d03fe5dd90bc"
+            },
+            "576b98a8-6196-4acc-9654-ca638a9e07d8": {
+                "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
+                "mediaId": "4208d4c3-a77b-4950-9b6a-5a12c4209d95",
+                "text": "Tarantino movies have the best storyline.",
+                "owner": "George",
+                "_createdOn": 1701845618436,
+                "_id": "576b98a8-6196-4acc-9654-ca638a9e07d8"
+            },
+            "7dd60e84-1699-4c8b-87f2-7dabf766aab2": {
+                "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
+                "mediaId": "52089dc4-a652-4f9c-af7e-0802c829389b",
+                "text": "Hilarious !",
+                "owner": "George",
+                "_createdOn": 1701846079445,
+                "_id": "7dd60e84-1699-4c8b-87f2-7dabf766aab2"
+            },
+            "b2a9e6d2-4ee2-4330-8909-49571873f527": {
+                "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
+                "mediaId": "3564027f-adcd-4425-b2c0-1253d2386c0c",
+                "text": "My favourite of the Harry Potter films!",
+                "owner": "George",
+                "_createdOn": 1701846244642,
+                "_id": "b2a9e6d2-4ee2-4330-8909-49571873f527"
+            },
+            "907fcb04-3874-440b-8542-215a309091cf":{
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "mediaId": "52089dc4-a652-4f9c-af7e-0802c829389b",
+                "text": "Charlie Sheen for the win!",
+                "owner": "Peter",
+                "_createdOn": 1701846280719,
+                "_id": "907fcb04-3874-440b-8542-215a309091cf"
             }
-        },
-        records: {
-            i01: {
-                name: "John1",
-                val: 1,
-                _createdOn: 1613551388703
-            },
-            i02: {
-                name: "John2",
-                val: 1,
-                _createdOn: 1613551388713
-            },
-            i03: {
-                name: "John3",
-                val: 2,
-                _createdOn: 1613551388723
-            },
-            i04: {
-                name: "John4",
-                val: 2,
-                _createdOn: 1613551388733
-            },
-            i05: {
-                name: "John5",
-                val: 2,
-                _createdOn: 1613551388743
-            },
-            i06: {
-                name: "John6",
-                val: 3,
-                _createdOn: 1613551388753
-            },
-            i07: {
-                name: "John7",
-                val: 3,
-                _createdOn: 1613551388763
-            },
-            i08: {
-                name: "John8",
-                val: 2,
-                _createdOn: 1613551388773
-            },
-            i09: {
-                name: "John9",
-                val: 3,
-                _createdOn: 1613551388783
-            },
-            i10: {
-                name: "John10",
-                val: 1,
-                _createdOn: 1613551388793
-            }
-        },
-        catches: {
-            "07f260f4-466c-4607-9a33-f7273b24f1b4": {
-                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-                angler: "Paulo Admorim",
-                weight: 636,
-                species: "Atlantic Blue Marlin",
-                location: "Vitoria, Brazil",
-                bait: "trolled pink",
-                captureTime: 80,
-                _createdOn: 1614760714812,
-                _id: "07f260f4-466c-4607-9a33-f7273b24f1b4"
-            },
-            "bdabf5e9-23be-40a1-9f14-9117b6702a9d": {
-                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-                angler: "John Does",
-                weight: 554,
-                species: "Atlantic Blue Marlin",
-                location: "Buenos Aires, Argentina",
-                bait: "trolled pink",
-                captureTime: 120,
-                _createdOn: 1614760782277,
-                _id: "bdabf5e9-23be-40a1-9f14-9117b6702a9d"
-            }
-        },
-        furniture: {
-        },
-        orders: {
         },
         media: {
             "52089dc4-a652-4f9c-af7e-0802c829389b": {
@@ -1531,6 +1439,18 @@
                 "_createdOn": 1701516135257,
                 "_id": "c64db398-91cd-487c-b900-86058c0422f8"
             },
+            "4208d4c3-a77b-4950-9b6a-5a12c4209d95":{
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "title": "Once Upon a Time in Hollywood",
+                "year": "2019",
+                "type": "movie",
+                "genre": "Comedy, Western",
+                "notes": "Quentin Tarantino movie with Leonardo DiCaprio and Brad PItt",
+                "image": "https://media.services.cinergy.ch/media/box1600/a3378998b6e42c1f2712229459b1ac78b4a24776.jpg",
+                "commentsCount": 0,
+                "_createdOn": 1701844801714,
+                "_id": "4208d4c3-a77b-4950-9b6a-5a12c4209d95"
+            }
         },
         likes: {
         },
