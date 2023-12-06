@@ -1398,7 +1398,7 @@
                 "type": "tv-series",
                 "genre": "Sitcom",
                 "notes": "Charlie Sheen comedy ",
-                "commentsCount": 0,
+                "commentsCount": 2,
                 "image": "https://m.media-amazon.com/images/I/618DzFgITnL._AC_UF894,1000_QL80_.jpg",
                 "_createdOn": 1701516135257,
                 "_id": "52089dc4-a652-4f9c-af7e-0802c829389b"
@@ -1410,7 +1410,7 @@
                 "type": "movie",
                 "genre": "Fantasy",
                 "notes": "Interesting wizzard movies",
-                "commentsCount": 0,
+                "commentsCount": 1,
                 "image": "https://www.themoviedb.org/t/p/w500/aWxwnYoe8p2d2fcxOqtvAtJ72Rw.jpg",
                 "_createdOn": 1701516135257,
                 "_id": "3564027f-adcd-4425-b2c0-1253d2386c0c"
@@ -1420,7 +1420,7 @@
                 "title": "Peaky Blinders",
                 "year": "2014",
                 "type": "tv-series",
-                "genre": "Action Thriller",
+                "genre": "Action, Thriller",
                 "notes": "Birmingham gang movie",
                 "commentsCount": 0,
                 "image": "https://m.media-amazon.com/images/M/MV5BZjYzZDgzMmYtYjY5Zi00YTk1LThhMDYtNjFlNzM4MTZhYzgyXkEyXkFqcGdeQXVyMTE5NDQ1MzQ3._V1_.jpghttps://m.media-amazon.com/images/M/MV5BZjYzZDgzMmYtYjY5Zi00YTk1LThhMDYtNjFlNzM4MTZhYzgyXkEyXkFqcGdeQXVyMTE5NDQ1MzQ3._V1_.jpg",
@@ -1447,7 +1447,7 @@
                 "genre": "Comedy, Western",
                 "notes": "Quentin Tarantino movie with Leonardo DiCaprio and Brad PItt",
                 "image": "https://media.services.cinergy.ch/media/box1600/a3378998b6e42c1f2712229459b1ac78b4a24776.jpg",
-                "commentsCount": 0,
+                "commentsCount": 3,
                 "_createdOn": 1701844801714,
                 "_id": "4208d4c3-a77b-4950-9b6a-5a12c4209d95"
             }

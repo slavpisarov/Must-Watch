@@ -4,7 +4,11 @@ const tempUrl = 'http://localhost:3030/jsonstore/media'
 const baseUrl = 'http://localhost:3030/data/media'
 
 export const getHomePage = async () => {
-    const result = await request.get(tempUrl);
+    const query = new URLSearchParams({
+        offset:0,
+        pageSize: 4,
+    })
+    const result = await request.get(`${baseUrl}?sortBy=commentsCount%20desc${query}`);
 
     return Object.values(result)
 }

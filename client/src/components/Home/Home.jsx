@@ -30,7 +30,6 @@ export default function Home() {
                     {media.map(m => <CardMain
                         key={m._id}
                         {...m}
-                        image={m.imageUrl} //remove when migrating to collections
                         />
                     )}
                 </div>
