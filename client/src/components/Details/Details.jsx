@@ -23,27 +23,41 @@ export default function Details() {
     useEffect(() => {
         mediaService.getOne(mediaId)
             .then(setMedia)
+            .catch((e) => alert(e.message))
 
         commentService.getAll(mediaId)
             .then(setComments)
+            .catch((e) => alert(e.message))
+
     }, [mediaId])
 
     const addCommentHandler = async ({ comment }) => {
-        const newComment = await commentService.create(mediaId, comment, username)
-        await mediaService.addComment(mediaId)
+        try {
+            const newComment = await commentService.create(mediaId, comment, username)
+            await mediaService.addComment(mediaId)
 
-        setComments(state => [...state, { ...newComment }])
-        formValues.comment = '';
+            setComments(state => [...state, { ...newComment }])
+            formValues.comment = '';
 
+        } catch (err) {
+            alert(err.message)
+        }
     }
 
     const deleteMedia = async () => {
 
         const hasConfirmed = confirm(`Are you sure you want to delete ${media.title} from your ${media.type === 'movie' ? 'Movie' : 'TV Series'} list?`);
         if (hasConfirmed) {
-            await mediaService.remove(mediaId)
+            try {
+                await mediaService.remove(mediaId)
+                navigate('/')
 
-            navigate('/')
+            } catch (err) {
+                alert(err.message)
+                navigate('/')
+
+            }
+
         }
     }
 

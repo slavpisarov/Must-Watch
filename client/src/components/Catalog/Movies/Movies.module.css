@@ -31,7 +31,8 @@
 }
 
 .list > *{
-    width: 11.4vw;
+    flex: 1 1 11.9vw;
+    max-width: 12.5vw;
 }
 
 .empty{

@@ -10,6 +10,7 @@ export default function Home() {
     useEffect(() => {
         mediaService.getHomePage()
             .then(setMedia)
+            .catch((err)=> alert(err.message))
     }, [])
 
     return (

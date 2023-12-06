@@ -14,6 +14,7 @@ export default function Movies() {
     useEffect(() => {
         mediaService.getMyMedia(userId, type)
             .then(setMovies)
+            .catch((e) => alert(e.message))
     }, [])
     return (
         <div className={styles.home}>

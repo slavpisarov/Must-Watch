@@ -10,6 +10,7 @@ export default function Catalog() {
     useEffect(() => {
         mediaService.getAll()
             .then(setMedia)
+            .catch((e) => alert(e.message))
     }, [])
     return (
         <div className={styles.home}>

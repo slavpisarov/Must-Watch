@@ -14,6 +14,8 @@ export default function TvSeries() {
     useEffect(() => {
         mediaService.getMyMedia(userId, type)
             .then(setTvSeries)
+            .catch((e) => alert(e.message))
+            
     }, [])
     return (
         <div className={styles.home}>

@@ -23,7 +23,6 @@ export default function useForm(initialValues,onSubmitHandler) {
             return setValidated(true)
         }
         
-
         if(onSubmitHandler){
             onSubmitHandler(formValues)
         }

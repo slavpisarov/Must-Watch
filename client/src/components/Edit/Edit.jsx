@@ -46,11 +46,10 @@ export default function Create() {
         const data = Object.fromEntries(new FormData(e.currentTarget));
 
         try {
-            await mediaService.edit(mediaId, data);
+            await mediaService.edit(mediaId, {...data,commentsCount:media.commentsCount});
             navigate(`/catalog/${data.type === 'movie'?'movies':'tv-series'}`)
-
         } catch (error) {
-            console.log(error);
+            alert(error.message);
         }
     }
 
