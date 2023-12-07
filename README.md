@@ -31,32 +31,32 @@ The Frontend demo is deployed with Firebase.
 
    ## User Permissions
 
-     1. All users and guests:
+1. All users and guests:
    * View home page with most commented media
    * View catalog with all media
    * Read comments
 
-     2. Not Logged guests
+2. Not Logged guests
     * Login and register
 
-     3. Logged in users
+3. Logged in users
     * Add media
     * Access their own movies / tv series pages
     * Write comments
 
-     4. Users (Owners)
+4. Users (Owners)
     * Edit and delete their media
 
   ## Features
 
-   1. Public part - no authentication 
+1. Public part - no authentication 
     * **Home** page is accessible by all users, and includes a short text and 4 most commented media.
     * **Catalog** page includes all uploaded media.
     * **Details** page with info about the media and comments for it.
     * **Register** page requires username,email,password and rePassword. Email must not be registered before and passwords must match.
     * **Login** page requires valid email and rassword.
 
-    2. Private part - authentication and authorization:
+2. Private part - authentication and authorization:
     * **Details** page with info about the media and comments for it and can comment, also owner can see edit and delete buttons.
     * **Create** page where a new media is added. Requred fields are title and type, so that the users can be redirected based on type.
     * **MyList** pages are two separate pages for either movies, or tv series that a user has created with links to their details page.
