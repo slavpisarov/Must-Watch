@@ -1,6 +1,6 @@
 # Must Watch
 
-This is an application that provides the users with the opportunity to keep track of the Movies and TV series they want to watch in an engaging way. The users can add and comment on theirs and other people's media prefferences. 
+This is an application that provides the users with the opportunity to keep track of the Movies and TV series they want to watch in an engaging way. The users can add and comment on theirs and other people's media preferences. 
 
 ## Local Instalation 
 
