@@ -34,7 +34,7 @@ The Frontend demo is deployed with Firebase.
 1. All users and guests:
    * View home page with most commented media
    * View catalog with all media
-   * Read comments
+   * View details and read comments
 
 2. Not Logged guests
     * Login and register
@@ -54,11 +54,11 @@ The Frontend demo is deployed with Firebase.
     * **Catalog** page includes all uploaded media.
     * **Details** page with info about the media and comments for it.
     * **Register** page requires username,email,password and rePassword. Email must not be registered before and passwords must match.
-    * **Login** page requires valid email and rassword.
+    * **Login** page requires valid email and assword.
 
 2. Private part - authentication and authorization:
-    * **Details** page with info about the media and comments for it and can comment, also owner can see edit and delete buttons.
-    * **Create** page where a new media is added. Requred fields are title and type, so that the users can be redirected based on type.
+    * **Details** page with info about the media, comments and can comment themselve. Owners can also see edit and delete buttons.
+    * **Create** page where new media is added. Required fields are title and type, for redirection purposes.
     * **MyList** pages are two separate pages for either movies, or tv series that a user has created with links to their details page.
 
 
