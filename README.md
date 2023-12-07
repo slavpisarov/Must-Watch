@@ -21,10 +21,10 @@ The Frontend demo is deployed with Firebase.
 ## Authentication 
  You can use two users for immediate testing 
 
-  #### User 1:
-   Email: peter@abv.bg
-   Password: 123456
+  ### User 1:
+   * Email: peter@abv.bg
+   * Password: 123456
 
-  #### User 2:
-   Email: george@abv.bg
-   Password: 123456
+  ### User 2:
+   * Email: george@abv.bg
+   * Password: 123456
