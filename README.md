@@ -1,6 +1,6 @@
 # Must Watch
 
-This is an application that provides the users with the opportunity to keep track of the Movies and TV series they want to watch in an engaging way. The users can add and comment on theirs and other people's media preferences. 
+This is an application that provides the users with the opportunity to keep track of the Movies and TV series they want to watch in an engaging way. The users can add and comment on theirs and other people's media preferences. Must Watch uses React for Frontend and Softuni's practice server for Backend.
 
 ## Local Instalation 
 
@@ -48,7 +48,7 @@ The Frontend demo is deployed with Firebase.
     * Edit and delete their media
 
   ## Features
-
+ There is pre-seeded data on the server for better user experience.
 1. Public part - no authentication 
     * **Home** page is accessible by all users, and includes a short text and 4 most commented media.
     * **Catalog** page includes all uploaded media.
@@ -58,14 +58,14 @@ The Frontend demo is deployed with Firebase.
 
 2. Private part - authentication and authorization:
     * **Details** page with info about the media, comments and can comment themselve. Owners can also see edit and delete buttons.
-    * **Create** page where new media is added. Required fields are title and type, for redirection purposes.
+    * **Create** page where new media is added. Required fields are title and type, for redirection purposes.For better UX also add year, genre, notes and imageUrl.
     * **MyList** pages are two separate pages for either movies, or tv series that a user has created with links to their details page.
 
 
   ## Security
 
 * The application requires the user to be authenticated to take advantage of the full functionalities.
-* Guards: Auth guard and Guest guard have been inmplemented to ensure access to the correct data based on user authenticity .
+* Guards: Auth guard and Guest guard have been implemented to ensure access to the appropriate experience based on user authenticity .
 * 404 Page is implemented to handle undefined routes with the option of redirection to home page.
 * Error boundary: catch JS errors and redirect to 404 page for bettter UX.
 
