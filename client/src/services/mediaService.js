@@ -52,16 +52,6 @@ export const addComment = async (mediaId) => {
 
     const movie = await getOne(mediaId)
     const result = await request.putComments(`${baseUrl}/${mediaId}`, { ...movie, commentsCount: movie.commentsCount + 1 })
-    //  await request.put(`${baseUrl}/${mediaId}`, {...movie, commentsCount:movie.commentsCount+1})
-
-    // const result = await fetch(`${baseUrl}/${mediaId}`, {
-    //     method: 'PUT',
-    //     headers: {
-    //         'Content-Type': 'application/json',
-    //         'X-Admin': localStorage.getItem('accessToken')
-    //     },
-    //     body: JSON.stringify({ ...movie, commentsCount: movie.commentsCount + 1 })
-    // })
 
     return result;
 }

@@ -59,8 +59,10 @@ export default function Register() {
                         name='password' 
                         value={formValues.password}
                         onChange={changeHandler}
+                        minLength={4}
                     />
-                    <Form.Control.Feedback type='invalid'>Password is required</Form.Control.Feedback>
+                    <Form.Control.Feedback type='invalid'>{formValues.password ==='' ? 'Password is required': 'Password must be at least 4 characters'}</Form.Control.Feedback>
+
                 </Form.Group>
 
                 <Form.Group >

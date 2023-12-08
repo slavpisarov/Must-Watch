@@ -48,10 +48,10 @@ export const AuthProvider = ({children}) =>{
     
     const values = {
       loginSubmitHandler,
-      loginErr:loginErr,
       registerSubmitHandler,
-      registerErr: registerErr,
       logoutHandler,
+      loginErr:loginErr,
+      registerErr: registerErr,
       email: auth.email,
       username:auth.username,
       userId:auth._id,
