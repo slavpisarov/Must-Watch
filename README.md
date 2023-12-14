@@ -2,6 +2,10 @@
 
 This is an application that provides the users with the opportunity to keep track of the Movies and TV series they want to watch in an engaging way. The users can add and comment on theirs and other people's media preferences. Must Watch uses React for Frontend and Softuni's practice server for Backend.
 
+## Demo
+
+You can see the live demo of Must Watch at https://must-watch-react.web.app, deployed with Firebase.
+
 ## Local Instalation 
 
 1. Clone the repository to your local machine
