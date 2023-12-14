@@ -1,7 +1,7 @@
 import * as request from "../lib/request";
 
-const tempUrl = 'http://localhost:3030/jsonstore/media'
-const baseUrl = 'http://localhost:3030/data/media'
+// const baseUrl = 'http://localhost:3030/data/media'
+const baseUrl = `${import.meta.env.VITE_API_URL}/data/media`
 
 export const getHomePage = async () => {
     const query = new URLSearchParams({
