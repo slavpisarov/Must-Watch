@@ -4,7 +4,7 @@ This is an application that provides the users with the opportunity to keep trac
 
 ## Demo
 
-You can see the live demo of Must Watch at https://must-watch-react.web.app, deployed with Firebase.
+You can see the live demo of Must Watch at https://must-watch-react.web.app. Both client and server are deployed with Firebase.
 
 ## Local Instalation 
 
